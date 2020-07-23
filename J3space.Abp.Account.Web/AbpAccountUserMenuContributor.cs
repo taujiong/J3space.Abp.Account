@@ -3,21 +3,30 @@ using J3space.Abp.Account.Localization;
 using Localization.Resources.AbpUi;
 using Volo.Abp.UI.Navigation;
 
-public class AbpAccountUserMenuContributor : IMenuContributor
+namespace J3space.Abp.Account.Web
 {
-    public virtual Task ConfigureMenuAsync(MenuConfigurationContext context)
+    public class AbpAccountUserMenuContributor : IMenuContributor
     {
-        if (context.Menu.Name != StandardMenus.User)
+        public Task ConfigureMenuAsync(MenuConfigurationContext context)
         {
+            if (context.Menu.Name != StandardMenus.User) return Task.CompletedTask;
+
+            var uiResource = context.GetLocalizer<AbpUiResource>();
+            var accountResource = context.GetLocalizer<AbpAccountResource>();
+
+            context.Menu.AddItem(new ApplicationMenuItem(
+                AbpAccountMenuName.Manage,
+                accountResource["ManageYourProfile"],
+                "~/Account/Manage",
+                "fa fa-cog"));
+            context.Menu.AddItem(new ApplicationMenuItem(
+                AbpAccountMenuName.Logout,
+                uiResource["Logout"],
+                "~/Account/Logout",
+                "fa fa-power-off",
+                int.MaxValue - 1000));
+
             return Task.CompletedTask;
         }
-
-        var uiResource = context.GetLocalizer<AbpUiResource>();
-        var accountResource = context.GetLocalizer<AbpAccountResource>();
-
-        context.Menu.AddItem(new ApplicationMenuItem("Account.Manage", accountResource["ManageYourProfile"], url: "~/Account/Manage", icon: "fa fa-cog", order: 1000, null));
-        context.Menu.AddItem(new ApplicationMenuItem("Account.Logout", uiResource["Logout"], url: "~/Account/Logout", icon: "fa fa-power-off", order: int.MaxValue - 1000));
-
-        return Task.CompletedTask;
     }
 }
