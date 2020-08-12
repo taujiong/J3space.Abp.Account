@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A5B2081D-7F46-4C68-A857-2461C02DFD50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{92EA3FE9-A0D2-4E38-A942-9AF42801C6E7}"
+ProjectSection(SolutionItems) = preProject
+	.gitignore = .gitignore
+	common.props = common.props
+	LICENSE = LICENSE
+EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "J3space.Abp.Account.Application", "src\J3space.Abp.Account.Application\J3space.Abp.Account.Application.csproj", "{7375B6C2-3028-468B-A464-801A6C9263E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "J3space.Abp.Account.Application.Contracts", "src\J3space.Abp.Account.Application.Contracts\J3space.Abp.Account.Application.Contracts.csproj", "{DFA7AA2F-CE0C-4DFC-B9D9-C880FC994DE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "J3space.Abp.Account.HttpApi", "src\J3space.Abp.Account.HttpApi\J3space.Abp.Account.HttpApi.csproj", "{845CF93A-E8FE-493B-8C76-1C2B0DD0B60A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "J3space.Abp.Account.HttpApi.Client", "src\J3space.Abp.Account.HttpApi.Client\J3space.Abp.Account.HttpApi.Client.csproj", "{7755B0A8-2C0F-4A0C-9351-FE7234DF36CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "J3space.Abp.Account.Web", "src\J3space.Abp.Account.Web\J3space.Abp.Account.Web.csproj", "{40C9AB62-A41C-4E62-B76F-584820C68348}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7375B6C2-3028-468B-A464-801A6C9263E5} = {A5B2081D-7F46-4C68-A857-2461C02DFD50}
+		{DFA7AA2F-CE0C-4DFC-B9D9-C880FC994DE3} = {A5B2081D-7F46-4C68-A857-2461C02DFD50}
+		{845CF93A-E8FE-493B-8C76-1C2B0DD0B60A} = {A5B2081D-7F46-4C68-A857-2461C02DFD50}
+		{7755B0A8-2C0F-4A0C-9351-FE7234DF36CA} = {A5B2081D-7F46-4C68-A857-2461C02DFD50}
+		{40C9AB62-A41C-4E62-B76F-584820C68348} = {A5B2081D-7F46-4C68-A857-2461C02DFD50}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7375B6C2-3028-468B-A464-801A6C9263E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7375B6C2-3028-468B-A464-801A6C9263E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7375B6C2-3028-468B-A464-801A6C9263E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7375B6C2-3028-468B-A464-801A6C9263E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFA7AA2F-CE0C-4DFC-B9D9-C880FC994DE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFA7AA2F-CE0C-4DFC-B9D9-C880FC994DE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFA7AA2F-CE0C-4DFC-B9D9-C880FC994DE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFA7AA2F-CE0C-4DFC-B9D9-C880FC994DE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{845CF93A-E8FE-493B-8C76-1C2B0DD0B60A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{845CF93A-E8FE-493B-8C76-1C2B0DD0B60A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{845CF93A-E8FE-493B-8C76-1C2B0DD0B60A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{845CF93A-E8FE-493B-8C76-1C2B0DD0B60A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7755B0A8-2C0F-4A0C-9351-FE7234DF36CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7755B0A8-2C0F-4A0C-9351-FE7234DF36CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7755B0A8-2C0F-4A0C-9351-FE7234DF36CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7755B0A8-2C0F-4A0C-9351-FE7234DF36CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40C9AB62-A41C-4E62-B76F-584820C68348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40C9AB62-A41C-4E62-B76F-584820C68348}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40C9AB62-A41C-4E62-B76F-584820C68348}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40C9AB62-A41C-4E62-B76F-584820C68348}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
