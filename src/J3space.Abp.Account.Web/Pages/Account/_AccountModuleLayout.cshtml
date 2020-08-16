@@ -1,7 +1,7 @@
 ﻿@using Volo.Abp.AspNetCore.Mvc.AntiForgery
 @using Volo.Abp.Localization
-@using System.Globalization
 @using Volo.Abp.Settings
+@using System.Globalization
 @inject IAbpAntiForgeryManager AbpAntiForgeryManager
 @inject ISettingProvider SettingProvider
 @{
@@ -13,8 +13,8 @@
 
 <!DOCTYPE html>
 
-<html lang="@CultureInfo.CurrentCulture.Name"
-      dir="@rtl">
+<html dir="@rtl"
+      lang="@CultureInfo.CurrentCulture.Name">
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no"

@@ -38,6 +38,7 @@ namespace J3space.Abp.Account.Application.Test
                 });
             });
         }
+
         private static SqliteConnection CreateDatabaseAndGetConnection()
         {
             var connection = new SqliteConnection("Data Source=:memory:");
@@ -56,4 +57,3 @@ namespace J3space.Abp.Account.Application.Test
         }
     }
 }
-
