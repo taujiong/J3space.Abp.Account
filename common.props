@@ -7,7 +7,7 @@
     <Description>A DIY version for Abp vnext Account module</Description>
 <!--    <PackageIconUrl>https://abp.io/assets/abp_nupkg.png</PackageIconUrl>-->
     <PackageProjectUrl>https://github.com/taujiong/J3space.Abp.Account.git</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/taujiong/J3space.Abp.Account/blob/main/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/taujiong/J3space.Abp.Account.git</RepositoryUrl>
   </PropertyGroup>
