@@ -22,7 +22,7 @@ namespace J3space.Abp.Account.Application.Test
         }
 
         [Fact]
-        public async Task RegisterAsync()
+        public async Task Should_Register()
         {
             var registerDto = new RegisterDto
             {
@@ -30,8 +30,6 @@ namespace J3space.Abp.Account.Application.Test
                 EmailAddress = "bob.lee@abp.io",
                 Password = "P@ssW0rd"
             };
-
-            #region success
 
             await _accountAppService.RegisterAsync(registerDto);
 
@@ -43,45 +41,36 @@ namespace J3space.Abp.Account.Application.Test
             user.Email.ShouldBe("bob.lee@abp.io");
 
             (await _userManager.CheckPasswordAsync(user, "P@ssW0rd")).ShouldBeTrue();
+        }
 
-            #endregion
-
-            #region fail
+        [Fact]
+        public async Task Should_Throw_Exception_With_Wrong_RegisterDto()
+        {
+            var registerDto = new RegisterDto
+            {
+                UserName = "bob.lee",
+                EmailAddress = "bob.lee@abp.io",
+                Password = "P@ssW0rd"
+            };
+            await _accountAppService.RegisterAsync(registerDto);
 
             // 用户已被注册
-            try
-            {
-                await _accountAppService.RegisterAsync(registerDto);
-            }
-            catch (AbpIdentityResultException e)
-            {
-                e.Code.ShouldBe("Identity.DuplicateUserName");
-            }
+            var e = await Assert.ThrowsAsync<AbpIdentityResultException>(async () =>
+                await _accountAppService.RegisterAsync(registerDto));
+            e.Code.ShouldBe("Identity.DuplicateUserName");
 
             // 邮箱已被注册
             registerDto.UserName = "bob";
-            try
-            {
-                await _accountAppService.RegisterAsync(registerDto);
-            }
-            catch (AbpIdentityResultException e)
-            {
-                e.Code.ShouldBe("Identity.DuplicateEmail");
-            }
+            e = await Assert.ThrowsAsync<AbpIdentityResultException>(async () =>
+                await _accountAppService.RegisterAsync(registerDto));
+            e.Code.ShouldBe("Identity.DuplicateEmail");
 
             // 密码不规范
             registerDto.EmailAddress = "bob@abp.io";
             registerDto.Password = "Password";
-            try
-            {
-                await _accountAppService.RegisterAsync(registerDto);
-            }
-            catch (AbpIdentityResultException e)
-            {
-                e.Code.ShouldContain("Identity.Password");
-            }
-
-            #endregion
+            e = await Assert.ThrowsAsync<AbpIdentityResultException>(async () =>
+                await _accountAppService.RegisterAsync(registerDto));
+            e.Code.ShouldContain("Identity.Password");
         }
     }
 }
