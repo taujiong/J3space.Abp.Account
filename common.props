@@ -1,11 +1,10 @@
 ﻿<Project>
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
-    <Version>1.0.0</Version>
+    <Version>0.1.0</Version>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
     <Authors>taujiong</Authors>
     <Description>A DIY version for Abp vnext Account module</Description>
-<!--    <PackageIconUrl>https://abp.io/assets/abp_nupkg.png</PackageIconUrl>-->
+    <PackageIconUrl>https://avatars2.githubusercontent.com/u/52844763?s=128</PackageIconUrl>
     <PackageProjectUrl>https://github.com/taujiong/J3space.Abp.Account.git</PackageProjectUrl>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
