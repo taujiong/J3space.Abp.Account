@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <Import Project="..\..\common.props" />
+  <Import Project="..\..\common.props"/>
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -14,13 +14,20 @@
     <IsPackable>true</IsPackable>
     <OutputType>Library</OutputType>
   </PropertyGroup>
-
+  
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Account.Web" Version="3.2.0"/>
+    <EmbeddedResource Include="Pages\**\*.css"/>
+    <EmbeddedResource Include="Pages\**\*.jpg"/>
+    <EmbeddedResource Include="Pages\**\*.js"/>
+    <Content Remove="Pages\**\*.css"/>
+    <Content Remove="Pages\**\*.jpg"/>
+    <Content Remove="Pages\**\*.js"/>
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="AbpAccountWebModule.cs"/>
+    <PackageReference Include="Volo.Abp.Account.HttpApi" Version="3.2.0"/>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI" Version="3.2.0"/>
+    <PackageReference Include="Volo.Abp.Identity.AspNetCore" Version="3.2.0"/>
   </ItemGroup>
 
 </Project>

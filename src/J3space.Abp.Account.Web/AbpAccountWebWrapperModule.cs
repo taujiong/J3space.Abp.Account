@@ -1,12 +1,14 @@
 using Microsoft.Extensions.DependencyInjection;
-using Volo.Abp.Account.Web;
+using Volo.Abp.Account;
+using Volo.Abp.Identity.AspNetCore;
 using Volo.Abp.Modularity;
 using Volo.Abp.VirtualFileSystem;
 
 namespace J3space.Abp.Account.Web
 {
     [DependsOn(
-        typeof(AbpAccountWebModule)
+        typeof(AbpAccountHttpApiModule),
+        typeof(AbpIdentityAspNetCoreModule)
     )]
     public class AbpAccountWebWrapperModule : AbpModule
     {
