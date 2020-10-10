@@ -58,8 +58,6 @@ namespace J3space.Abp.Account.Web.Pages.Account
 
             ValidateModel();
 
-            EnableLocalLogin = await SettingProvider.IsTrueAsync(AccountSettingNames.EnableLocalLogin);
-
             await ReplaceEmailToUsernameOfInputIfNeeds();
 
             var result = await SignInManager.PasswordSignInAsync(

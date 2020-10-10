@@ -1,6 +1,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Account;
+using Volo.Abp.Account.Localization;
 using Volo.Abp.Identity.AspNetCore;
+using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.VirtualFileSystem;
 
@@ -25,6 +27,13 @@ namespace J3space.Abp.Account.Web
             Configure<AbpVirtualFileSystemOptions>(options =>
             {
                 options.FileSets.AddEmbedded<AbpAccountWebWrapperModule>("J3space.Abp.Account.Web");
+            });
+
+            Configure<AbpLocalizationOptions>(options =>
+            {
+                options.Resources
+                    .Get<AccountResource>()
+                    .AddVirtualJson("/Localization/Resources");
             });
         }
     }
