@@ -16,13 +16,13 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <EmbeddedResource Include="Pages\**\*.css"/>
-    <EmbeddedResource Include="Pages\**\*.jpg"/>
-    <EmbeddedResource Include="Pages\**\*.js"/>
+    <EmbeddedResource Include="wwwroot\**\*.css"/>
+    <EmbeddedResource Include="wwwroot\**\*.jpg"/>
+    <EmbeddedResource Include="wwwroot\**\*.js"/>
     <EmbeddedResource Include="Localization\Resources\*.json"/>
-    <Content Remove="Pages\**\*.css"/>
-    <Content Remove="Pages\**\*.jpg"/>
-    <Content Remove="Pages\**\*.js"/>
+    <Content Remove="wwwroot\**\*.css"/>
+    <Content Remove="wwwroot\**\*.jpg"/>
+    <Content Remove="wwwroot\**\*.js"/>
     <Content Remove="Localization\Resources\*.json"/>
   </ItemGroup>
 
