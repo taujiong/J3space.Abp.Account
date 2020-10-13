@@ -93,7 +93,7 @@
       @L["Cancel"]
     </a>
     <a class="is-size-6 mx-1"
-       href="javascript:">
+       href="@Url.Page("./ForgotPassword", new {returnUrl = Model.ReturnUrl, returnUrlHash = Model.ReturnUrlHash})">
       @L["ForgotPassword"].Value.TrimEnd('?')
     </a>
   </div>
