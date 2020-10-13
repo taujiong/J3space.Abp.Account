@@ -1,6 +1,4 @@
 @page
-@inject IAuthenticationSchemeProvider SchemeProvider
-@using Microsoft.AspNetCore.Authentication
 @model J3space.Abp.Account.Web.Pages.Account.LoginModel
 
 <form class="box"
@@ -40,9 +38,8 @@
   </div>
 
   <div class="field">
-    <label for="remember-input">
+    <label asp-for="Input.RememberMe">
       <input asp-for="Input.RememberMe"
-             id="remember-input"
              type="checkbox" />
       <span>@L["RememberMe"]</span>
     </label>
@@ -96,7 +93,7 @@
       @L["Cancel"]
     </a>
     <a class="is-size-6 mx-1"
-       href="javascript:">
+       href="@Url.Page("./ForgotPassword", new {returnUrl = Model.ReturnUrl, returnUrlHash = Model.ReturnUrlHash})">
       @L["ForgotPassword"].Value.TrimEnd('?')
     </a>
   </div>

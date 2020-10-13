@@ -15,6 +15,15 @@ namespace J3space.Abp.Account.Web.Pages.Account
 {
     public class RegisterModel : AccountPageModel
     {
+        public RegisterModel(
+            IAuthenticationSchemeProvider schemeProvider,
+            IOptions<AbpAccountOptions> accountOptions,
+            IAccountAppService accountAppService)
+        {
+            AccountAppService = accountAppService;
+            ExternalProviderHelper = new ExternalProviderHelper(schemeProvider, accountOptions.Value);
+        }
+
         [HiddenInput]
         [BindProperty(SupportsGet = true)]
         public string ReturnUrl { get; set; }
@@ -27,15 +36,6 @@ namespace J3space.Abp.Account.Web.Pages.Account
 
         [BindProperty(SupportsGet = true)] public bool IsExternalLogin { get; set; }
         public ExternalProviderHelper ExternalProviderHelper { get; }
-
-        public RegisterModel(
-            IAuthenticationSchemeProvider schemeProvider,
-            IOptions<AbpAccountOptions> accountOptions,
-            IAccountAppService accountAppService)
-        {
-            AccountAppService = accountAppService;
-            ExternalProviderHelper = new ExternalProviderHelper(schemeProvider, accountOptions.Value);
-        }
 
         public virtual async Task<IActionResult> OnGetAsync(string userName, string email)
         {
@@ -89,7 +89,7 @@ namespace J3space.Abp.Account.Web.Pages.Account
             var userDto = await AccountAppService.RegisterAsync(
                 new RegisterDto
                 {
-                    AppName = "IdentityServer",
+                    AppName = "MVC",
                     EmailAddress = Input.EmailAddress,
                     Password = Input.Password,
                     UserName = Input.UserName
@@ -105,7 +105,7 @@ namespace J3space.Abp.Account.Web.Pages.Account
             var userDto = await AccountAppService.RegisterAsync(
                 new RegisterDto
                 {
-                    AppName = "IdentityServer",
+                    AppName = "MVC",
                     EmailAddress = Input.EmailAddress,
                     Password = Input.Password,
                     UserName = Input.UserName
